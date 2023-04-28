@@ -7,11 +7,25 @@ on:
   workflow_dispatch:
 
 jobs:
+  create-artifact:
+    runs-on: ubuntu-latest
+    steps:
+      - name: create artifact
+        run: echo 'this is test' > test.txt
+      - name: upload artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: test-artifact
+          path: ./test.txt
   soracom-cli:
     runs-on: ubuntu-latest
     steps:
       - name: checkout
         uses: actions/checkout@v3
+      - name: download artifact
+        uses: actions/download-artifact@v2
+        with:
+          name: test-artifact
       - name: get sim list
         uses: ./
         with:

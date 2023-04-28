@@ -14,4 +14,5 @@ then
     SORACOM_COVERAGE="jp"
 fi
 
+ls
 /usr/local/bin/soracom --coverage-type "$SORACOM_COVERAGE" --auth-key-id "$SORACOM_AUTH_KEY_ID" --auth-key "$SORACOM_AUTH_KEY" roles list
