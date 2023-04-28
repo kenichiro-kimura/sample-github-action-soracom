@@ -2,11 +2,14 @@ name: "SORACOM CLI action"
 description: "SORACOM CLI action"
 
 inputs:
-  auth_key:
-    description: 'AUTH KEY'
-    required: false
-  auth_key_id:
-    description: 'AUTH KEY ID'
+  soracom_auth_key:
+    description: 'SORACOM AUTH KEY'
+    required: true
+  soracom_auth_key_id:
+    description: 'SORACOM AUTH KEY ID'
+    required: true
+  soracom_coverage:
+    description: 'SORACOM COVERAGE(Default:jp)'
     required: false
 
 runs:
