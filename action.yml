@@ -1,0 +1,17 @@
+name: "SORACOM CLI action"
+description: "SORACOM CLI action"
+
+inputs:
+  auth_key:
+    description: 'AUTH KEY'
+    required: false
+  auth_key_id:
+    description: 'AUTH KEY ID'
+    required: false
+
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  env:
+    SORACOM_AUTH_KEY: ${{ inputs.auth_key }}
+    SORACOM_AUTH_KEY_ID: ${{ inputs.auth_key_id }}

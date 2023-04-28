@@ -10,12 +10,8 @@ jobs:
   soracom-cli:
     runs-on: ubuntu-latest
     steps:
-      - name: install
-        run: |
-          curl -fsSL https://raw.githubusercontent.com/soracom/soracom-cli/master/install.sh | bash
       - name: get sim list
-        env:
+        use: ./
+        with:
           AUTH_KEY: ${{ secrets.AUTH_KEY }}
           AUTH_KEY_ID: ${{ secrets.AUTH_KEY_ID}}
-        run: |
-          /usr/local/bin/soracom --coverage-type jp --auth-key-id $AUTH_KEY_ID --auth-key $AUTH_KEY sims list
