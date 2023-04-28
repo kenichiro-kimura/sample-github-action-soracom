@@ -16,5 +16,5 @@ runs:
   using: 'docker'
   image: 'Dockerfile'
   env:
-    SORACOM_AUTH_KEY: ${{ inputs.auth_key }}
-    SORACOM_AUTH_KEY_ID: ${{ inputs.auth_key_id }}
+    soracom_auth_key: ${{ inputs.auth_key }}
+    soracom_auth_key_id: ${{ inputs.auth_key_id }}
