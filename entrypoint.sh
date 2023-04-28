@@ -9,6 +9,9 @@ then
   echo "No AUTHKEY_ID environment variable supplied"
   exit 1
 fi
-env
+if [ -z "SORACOM_COVERAGE" ]
+then
+    SORACOM_COVERAGE="jp"
+fi
 
-exit 0
+/usr/local/bin/soracom --coverage-type $COVERAGE --auth-key-id $AUTH_KEY_ID --auth-key $AUTH_KEY sims list
