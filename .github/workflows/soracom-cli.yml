@@ -10,6 +10,8 @@ jobs:
   soracom-cli:
     runs-on: ubuntu-latest
     steps:
+      - name: checkout
+        uses: actions/checkout@v3
       - name: get sim list
         uses: ./
         with:
